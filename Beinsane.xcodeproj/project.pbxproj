@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E94509231AAB4F0F00FE9782 /* BEIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E94509221AAB4F0F00FE9782 /* BEIClient.m */; };
+		E94509261AAB571800FE9782 /* BEIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E94509251AAB571800FE9782 /* BEIResponse.m */; };
+		E94509291AAB6B2000FE9782 /* BEIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94509281AAB6B2000FE9782 /* BEIBaseViewController.m */; };
+		E94509301AAB6BF700FE9782 /* BEIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E945092F1AAB6BF700FE9782 /* BEIDetailViewController.m */; };
+		E94509341AAB7B8D00FE9782 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E94509331AAB7B8D00FE9782 /* DetailCell.m */; };
+		E94509371AAB8D8900FE9782 /* BEIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94509361AAB8D8900FE9782 /* BEIWebViewController.m */; };
 		E9A6A32C1AAAEDB5007D2C66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A32B1AAAEDB5007D2C66 /* main.m */; };
-		E9A6A32F1AAAEDB5007D2C66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A32E1AAAEDB5007D2C66 /* AppDelegate.m */; };
-		E9A6A3321AAAEDB5007D2C66 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A3311AAAEDB5007D2C66 /* ViewController.m */; };
+		E9A6A32F1AAAEDB5007D2C66 /* BEIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A32E1AAAEDB5007D2C66 /* BEIAppDelegate.m */; };
+		E9A6A3321AAAEDB5007D2C66 /* BEIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A3311AAAEDB5007D2C66 /* BEIViewController.m */; };
 		E9A6A3351AAAEDB5007D2C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A6A3331AAAEDB5007D2C66 /* Main.storyboard */; };
 		E9A6A3371AAAEDB5007D2C66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A6A3361AAAEDB5007D2C66 /* Images.xcassets */; };
 		E9A6A33A1AAAEDB5007D2C66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A6A3381AAAEDB5007D2C66 /* LaunchScreen.xib */; };
 		E9A6A3461AAAEDB6007D2C66 /* BeinsaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A3451AAAEDB6007D2C66 /* BeinsaneTests.m */; };
+		E9A6A3501AAAEEB4007D2C66 /* british-english-insane.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9A6A34F1AAAEEB4007D2C66 /* british-english-insane.txt */; };
+		E9A6A35C1AAB01FC007D2C66 /* NDTrie.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A35B1AAB01FC007D2C66 /* NDTrie.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E9A6A3611AAB13DE007D2C66 /* BEIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A3601AAB13DE007D2C66 /* BEIUtils.m */; };
+		E9A6A3641AAB152E007D2C66 /* BEIQueryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A6A3631AAB152E007D2C66 /* BEIQueryManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +37,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E94509211AAB4F0F00FE9782 /* BEIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEIClient.h; sourceTree = "<group>"; };
+		E94509221AAB4F0F00FE9782 /* BEIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEIClient.m; sourceTree = "<group>"; };
+		E94509241AAB571700FE9782 /* BEIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEIResponse.h; sourceTree = "<group>"; };
+		E94509251AAB571800FE9782 /* BEIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEIResponse.m; sourceTree = "<group>"; };
+		E94509271AAB6B2000FE9782 /* BEIBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEIBaseViewController.h; sourceTree = "<group>"; };
+		E94509281AAB6B2000FE9782 /* BEIBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEIBaseViewController.m; sourceTree = "<group>"; };
+		E945092E1AAB6BF700FE9782 /* BEIDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEIDetailViewController.h; sourceTree = "<group>"; };
+		E945092F1AAB6BF700FE9782 /* BEIDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEIDetailViewController.m; sourceTree = "<group>"; };
+		E94509321AAB7B8D00FE9782 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
+		E94509331AAB7B8D00FE9782 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		E94509351AAB8D8900FE9782 /* BEIWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEIWebViewController.h; sourceTree = "<group>"; };
+		E94509361AAB8D8900FE9782 /* BEIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEIWebViewController.m; sourceTree = "<group>"; };
 		E9A6A3261AAAEDB5007D2C66 /* Beinsane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beinsane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A6A32A1AAAEDB5007D2C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9A6A32B1AAAEDB5007D2C66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E9A6A32D1AAAEDB5007D2C66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E9A6A32E1AAAEDB5007D2C66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9A6A3301AAAEDB5007D2C66 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E9A6A3311AAAEDB5007D2C66 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E9A6A32D1AAAEDB5007D2C66 /* BEIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEIAppDelegate.h; sourceTree = "<group>"; };
+		E9A6A32E1AAAEDB5007D2C66 /* BEIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BEIAppDelegate.m; sourceTree = "<group>"; };
+		E9A6A3301AAAEDB5007D2C66 /* BEIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEIViewController.h; sourceTree = "<group>"; };
+		E9A6A3311AAAEDB5007D2C66 /* BEIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BEIViewController.m; sourceTree = "<group>"; };
 		E9A6A3341AAAEDB5007D2C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9A6A3361AAAEDB5007D2C66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9A6A3391AAAEDB5007D2C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E9A6A33F1AAAEDB6007D2C66 /* BeinsaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeinsaneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A6A3441AAAEDB6007D2C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9A6A3451AAAEDB6007D2C66 /* BeinsaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeinsaneTests.m; sourceTree = "<group>"; };
+		E9A6A34F1AAAEEB4007D2C66 /* british-english-insane.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "british-english-insane.txt"; sourceTree = "<group>"; };
+		E9A6A35A1AAB01FC007D2C66 /* NDTrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDTrie.h; sourceTree = "<group>"; };
+		E9A6A35B1AAB01FC007D2C66 /* NDTrie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDTrie.m; sourceTree = "<group>"; };
+		E9A6A35F1AAB13DE007D2C66 /* BEIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEIUtils.h; sourceTree = "<group>"; };
+		E9A6A3601AAB13DE007D2C66 /* BEIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEIUtils.m; sourceTree = "<group>"; };
+		E9A6A3621AAB152E007D2C66 /* BEIQueryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEIQueryManager.h; sourceTree = "<group>"; };
+		E9A6A3631AAB152E007D2C66 /* BEIQueryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEIQueryManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +89,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E945092A1AAB6B7000FE9782 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E9A6A32D1AAAEDB5007D2C66 /* BEIAppDelegate.h */,
+				E9A6A32E1AAAEDB5007D2C66 /* BEIAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		E945092B1AAB6B8100FE9782 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E94509241AAB571700FE9782 /* BEIResponse.h */,
+				E94509251AAB571800FE9782 /* BEIResponse.m */,
+				E94509211AAB4F0F00FE9782 /* BEIClient.h */,
+				E94509221AAB4F0F00FE9782 /* BEIClient.m */,
+				E9A6A3621AAB152E007D2C66 /* BEIQueryManager.h */,
+				E9A6A3631AAB152E007D2C66 /* BEIQueryManager.m */,
+				E9A6A35F1AAB13DE007D2C66 /* BEIUtils.h */,
+				E9A6A3601AAB13DE007D2C66 /* BEIUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		E945092C1AAB6BA600FE9782 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E94509271AAB6B2000FE9782 /* BEIBaseViewController.h */,
+				E94509281AAB6B2000FE9782 /* BEIBaseViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E945092D1AAB6BBC00FE9782 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9A6A3301AAAEDB5007D2C66 /* BEIViewController.h */,
+				E9A6A3311AAAEDB5007D2C66 /* BEIViewController.m */,
+				E945092E1AAB6BF700FE9782 /* BEIDetailViewController.h */,
+				E945092F1AAB6BF700FE9782 /* BEIDetailViewController.m */,
+				E94509351AAB8D8900FE9782 /* BEIWebViewController.h */,
+				E94509361AAB8D8900FE9782 /* BEIWebViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E94509311AAB7B5A00FE9782 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E94509321AAB7B8D00FE9782 /* DetailCell.h */,
+				E94509331AAB7B8D00FE9782 /* DetailCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E9A6A31D1AAAEDB5007D2C66 = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +165,16 @@
 		E9A6A3281AAAEDB5007D2C66 /* Beinsane */ = {
 			isa = PBXGroup;
 			children = (
-				E9A6A32D1AAAEDB5007D2C66 /* AppDelegate.h */,
-				E9A6A32E1AAAEDB5007D2C66 /* AppDelegate.m */,
-				E9A6A3301AAAEDB5007D2C66 /* ViewController.h */,
-				E9A6A3311AAAEDB5007D2C66 /* ViewController.m */,
+				E945092C1AAB6BA600FE9782 /* Base */,
+				E945092A1AAB6B7000FE9782 /* Delegate */,
+				E94509311AAB7B5A00FE9782 /* Views */,
+				E945092D1AAB6BBC00FE9782 /* View Controllers */,
+				E945092B1AAB6B8100FE9782 /* Utils */,
+				E9A6A35D1AAB113B007D2C66 /* Trie */,
 				E9A6A3331AAAEDB5007D2C66 /* Main.storyboard */,
 				E9A6A3361AAAEDB5007D2C66 /* Images.xcassets */,
 				E9A6A3381AAAEDB5007D2C66 /* LaunchScreen.xib */,
+				E9A6A35E1AAB1181007D2C66 /* Resources */,
 				E9A6A3291AAAEDB5007D2C66 /* Supporting Files */,
 			);
 			path = Beinsane;
@@ -117,6 +204,23 @@
 				E9A6A3441AAAEDB6007D2C66 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9A6A35D1AAB113B007D2C66 /* Trie */ = {
+			isa = PBXGroup;
+			children = (
+				E9A6A35A1AAB01FC007D2C66 /* NDTrie.h */,
+				E9A6A35B1AAB01FC007D2C66 /* NDTrie.m */,
+			);
+			name = Trie;
+			sourceTree = "<group>";
+		};
+		E9A6A35E1AAB1181007D2C66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9A6A34F1AAAEEB4007D2C66 /* british-english-insane.txt */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +272,7 @@
 				TargetAttributes = {
 					E9A6A3251AAAEDB5007D2C66 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = LXH4N466X5;
 					};
 					E9A6A33E1AAAEDB6007D2C66 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -200,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9A6A3351AAAEDB5007D2C66 /* Main.storyboard in Resources */,
+				E9A6A3501AAAEEB4007D2C66 /* british-english-insane.txt in Resources */,
 				E9A6A33A1AAAEDB5007D2C66 /* LaunchScreen.xib in Resources */,
 				E9A6A3371AAAEDB5007D2C66 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +325,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9A6A3321AAAEDB5007D2C66 /* ViewController.m in Sources */,
-				E9A6A32F1AAAEDB5007D2C66 /* AppDelegate.m in Sources */,
+				E9A6A3321AAAEDB5007D2C66 /* BEIViewController.m in Sources */,
+				E94509231AAB4F0F00FE9782 /* BEIClient.m in Sources */,
+				E9A6A32F1AAAEDB5007D2C66 /* BEIAppDelegate.m in Sources */,
 				E9A6A32C1AAAEDB5007D2C66 /* main.m in Sources */,
+				E94509301AAB6BF700FE9782 /* BEIDetailViewController.m in Sources */,
+				E94509291AAB6B2000FE9782 /* BEIBaseViewController.m in Sources */,
+				E9A6A3641AAB152E007D2C66 /* BEIQueryManager.m in Sources */,
+				E9A6A3611AAB13DE007D2C66 /* BEIUtils.m in Sources */,
+				E9A6A35C1AAB01FC007D2C66 /* NDTrie.m in Sources */,
+				E94509341AAB7B8D00FE9782 /* DetailCell.m in Sources */,
+				E94509371AAB8D8900FE9782 /* BEIWebViewController.m in Sources */,
+				E94509261AAB571800FE9782 /* BEIResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +458,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Beinsane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,7 +470,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Beinsane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +531,7 @@
 				E9A6A34B1AAAEDB6007D2C66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9A6A34C1AAAEDB6007D2C66 /* Build configuration list for PBXNativeTarget "BeinsaneTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +540,7 @@
 				E9A6A34E1AAAEDB6007D2C66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
