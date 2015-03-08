@@ -32,7 +32,18 @@
     //Make text field place holder yellow
     _searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search" attributes:@{NSForegroundColorAttributeName: [UIColor yellowColor]}];
     //Make text field go to bottom
-    _blurViewTopConstraint.constant = (self.view.bounds.size.height) - (_blurView.frame.size.height);
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    CGFloat constantHeight = screenHeight - _blurView.frame.size.height;
+    //Something gets broken when using top layout guild. Use view top instead
+    [self.view removeConstraint:_blurViewTopConstraint];
+    _blurViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.blurView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:constantHeight];
+    [self.view addConstraint:_blurViewTopConstraint];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +58,7 @@
     [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:NO];
     self.searchResult = nil;
     _searchField.text = @"";
+    [self.view layoutIfNeeded];
     [self registerForKeyboardNotifications];
 }
 
@@ -63,6 +75,15 @@
 }
 
 #pragma mark - textfield
+
+//If physical keyboard is being used (Simulator)
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    //Remove the greeting view
+    [_helperView removeFromSuperview];
+    
+    //make text field go to top
+    [_blurViewTopConstraint setConstant:0];
+}
 
 - (IBAction)textFieldEdit:(id)sender {
     //Query when text changes
@@ -139,7 +160,11 @@
                                                   object:nil];
     
 }
-
+/*
+ *
+ * Don't use hardware keyboard, enable soft keyboard if on emulator.
+ *
+ */
 - (void)keyboardWillShow:(NSNotification *)notification {
     
     CGSize keyboardSize = [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
