@@ -44,28 +44,36 @@ static NSString* const kRequestFields = @"items(title,link,snippet,pagemap(cse_i
 #pragma mark - call
 
 + (void) performQueryCall:(NSString*)query completionHandler:(BEIClientCompletionHandler)handler {
+    //Construct request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[self constructCallURL:query]];
     [request setHTTPMethod:@"GET"];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //Make request
     [[[BEIClient sharedClient].session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         });
+        //If not network error
         if (!error) {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+            //Check status code
             if (httpResponse.statusCode == 200) {
                 NSError *jsonError;
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
                 if (jsonError) {
+                    //Error parsing JSON
                     handler(nil,jsonError);
                 } else {
+                    //Return object if everything goes well, errors if it does not
                     BEIResponseCustomQuery *customResponse = [BEIResponseCustomQuery createWithJson:json];
                     handler(customResponse,nil);
                 }
             } else {
+                //Status code is not equal to 200
                 handler(nil,CALL_ERROR);
             }
         } else {
+            //Network error
             handler(nil,error);
         }
     }] resume];
@@ -73,6 +81,7 @@ static NSString* const kRequestFields = @"items(title,link,snippet,pagemap(cse_i
 
 #pragma mark - helper
 + (NSURL*) constructCallURL:(NSString*)query {
+    //Construct call url
     NSString *urlString = [NSString stringWithFormat:@"%@?key=%@&cx=%@&q=%@&fields=%@",kBaseURLString,kAPIKey,kCustomSearchID,query,kRequestFields];
     return [NSURL URLWithString:urlString];
 }

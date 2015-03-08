@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //Make the same gradient color for all UIViewControllers
+    //SARI. KIRMIZI. EN BÜYÜK. CİMBOM.
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.view.bounds;
     gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor redColor] CGColor], (id)[[UIColor yellowColor] CGColor], nil];

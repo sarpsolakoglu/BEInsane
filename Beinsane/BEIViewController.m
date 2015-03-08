@@ -27,8 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //Make keyboard black
     _searchField.keyboardAppearance = UIKeyboardAppearanceDark;
+    //Make text field place holder yellow
     _searchField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Search" attributes:@{NSForegroundColorAttributeName: [UIColor yellowColor]}];
+    //Make text field go to bottom
     _blurViewTopConstraint.constant = (self.view.bounds.size.height) - (_blurView.frame.size.height);
 }
 
@@ -38,12 +41,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
-    [super viewWillDisappear:animated];
+    //Clean up
     [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:NO];
     self.searchResult = nil;
     _searchField.text = @"";
-    [self.view layoutIfNeeded];
     [self registerForKeyboardNotifications];
 }
 
@@ -62,6 +65,7 @@
 #pragma mark - textfield
 
 - (IBAction)textFieldEdit:(id)sender {
+    //Query when text changes
     [BEIQueryManager queryWithString:_searchField.text block:^(NSArray *results) {
         self.searchResult = results;
     }];
@@ -95,11 +99,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    //Change text color to white temporarily for selection effect
     cell.textLabel.textColor = [UIColor whiteColor];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         cell.textLabel.textColor = [UIColor blackColor];
     });
-   
+    //Go to next page
     [self performSegueWithIdentifier:@"openResultSegue" sender:self];
 }
 
@@ -140,10 +145,13 @@
     CGSize keyboardSize = [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     NSTimeInterval duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     UIViewAnimationCurve curve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
-  
+    
+    //Remove the greeting view
     [_helperView removeFromSuperview];
     
+    //make text field go to top
     [_blurViewTopConstraint setConstant:0];
+    //Adjust table view height
     [_tableViewBottomConstraint setConstant:keyboardSize.height];
     
     [UIView animateWithDuration:duration animations:^{
@@ -158,6 +166,7 @@
     NSTimeInterval duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     UIViewAnimationCurve curve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
     
+    //Adjust table view height
     [_tableViewBottomConstraint setConstant:0];
     
     [UIView animateWithDuration:duration animations:^{
@@ -172,6 +181,7 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"openResultSegue"]) {
+        //Set the search text to the next page
         BEIDetailViewController *controller = (BEIDetailViewController*)segue.destinationViewController;
         NSIndexPath *indexPath = [_tableView indexPathForSelectedRow];
         controller.searchedText = _searchResult[indexPath.row];
