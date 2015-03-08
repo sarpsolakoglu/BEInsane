@@ -52,6 +52,11 @@
     self.queryResult = nil;
 }
 
+-(void)dealloc {
+    self.photoCache = nil;
+    self.queryResult = nil;
+}
+
 #pragma mark - setter
 
 - (void) setQueryResult:(BEIResponseCustomQuery *)queryResult {
